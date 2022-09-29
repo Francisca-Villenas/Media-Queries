@@ -1,0 +1,154 @@
+body{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr 10fr 1fr;
+    grid-template-areas: 
+        "nav"
+        "aside"
+        "main"
+        "footer";
+}
+
+nav{
+    grid-area: nav;
+    background: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+main{
+    grid-area: main;
+}
+
+.rings{
+    overflow-y: scroll;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width:576px) {
+    .rings {
+        height: 70vh;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .rings {
+        height: 75vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-top: 2rem;
+    }
+}
+
+.card {
+    border: solid 2px darkgoldenrod;
+    margin: 2rem;
+    height: 30rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-img-top {
+    min-height: 5rem;
+    
+}
+
+
+.card-title {
+    color: black;
+    padding-top: 4rem;
+    
+    
+}
+
+.card-button {
+    padding-bottom: 3rem;
+}
+
+@media screen and (min-width:576px) {
+    .card {
+        padding: 0rem;
+        margin: 0.1rem;
+    }
+
+    .card-img-top {
+        padding-top: 5rem;
+        
+    }
+}
+
+
+@media screen and (min-width:992px) {
+    .card {
+        margin: 0.2rem;
+        height: 22rem;
+        width: 15rem;
+    }
+
+    .card-img-top {
+        padding-bottom: 8rem;
+    }
+}
+
+
+
+aside{
+    grid-area: aside;
+    background-color: antiquewhite;
+    color: black;
+}
+
+.filtros {
+    text-align: center; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.3rem;
+}
+
+footer{
+    grid-area: footer;
+    background-color: darkgray;
+    padding-top: 1rem;
+}
+
+
+@media screen and (min-width:576px) {
+    body {
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas:
+            "nav nav"
+            "aside main"
+            "footer footer";
+    }
+}
+
+@media screen and (min-width:992px) {
+    body{
+        grid-template-columns: 15% 85%;
+        grid-template-areas: 
+            "nav aside"
+            "nav main"
+            "footer main";
+    }
+}
